@@ -1,0 +1,62 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  color: whitesmoke;
+  background: rgb(26, 26, 41);
+
+  .navigation {
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+      width: 10px;
+      height: 10px;
+      background: transparent;
+      border: 2px solid whitesmoke;
+      border-radius: 50%;
+      margin-top: 20px;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.3);
+        cursor: pointer;
+      }
+
+      &.selected {
+        transform: scale(1.3);
+        background: whitesmoke;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+
+  }
+
+  main {
+    height: 100vh;
+    overflow: scroll;
+    -ms-scroll-snap-points-y: snapList(100vh);
+    scroll-snap-type: y mandatory;
+    section {
+      height: 100vh;
+      width: 100%;
+      scroll-snap-align: start;
+
+      &:nth-child(even) {
+        background: rgb(22, 22, 35);
+      }
+    }
+  }
+}

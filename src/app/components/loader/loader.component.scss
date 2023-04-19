@@ -1,0 +1,61 @@
+.loader-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background: rgb(26, 26, 41);
+  background: rgb(26, 26, 41);
+  color: whitesmoke;
+  font-family: "Roboto Light", sans-serif;
+  text-align: center;
+
+  .ring {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(255, 255, 255, .5);
+    }
+  }
+
+  span {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 3s ease-in-out infinite;
+  }
+
+  @keyframes ring {
+    0% {
+      transform: rotate(0deg);
+      box-shadow: 1px 5px 2px #e65c00;
+    }
+    50% {
+      transform: rotate(180deg);
+      box-shadow: 1px 5px 2px #18b201;
+    }
+    100% {
+      transform: rotate(360deg);
+      box-shadow: 1px 5px 2px #0456c8;
+    }
+  }
+
+  @keyframes text {
+    50% {
+      opacity: 0.1;
+    }
+  }
+
+}
